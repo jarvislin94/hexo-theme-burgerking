@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <%- css('css/style.css' ) %>
-        <%- css('css/reset.css') %>
-    </head>
+<%-partial('./_partial/head.ejs')%>
 <body>
-    <nav>
-        <div class="nav-item logo"><a href="#">BURGERKING</a></div>
-        <div class="nav-item"><a href="#">Home</a></div>
-        <div class="nav-item"><a href="#">Archive</a></div>
-        <div class="nav-item"><a href="#">Tag</a></div>
-        <div class="nav-item"><a href="#">Category</a></div>
-        <div class="nav-item"><a href="#">About</a></div>
-    </nav>
-    <div class="wrapper">
-
-    </div>
-    <div class="footer">
-        
-    </div>
+    <%-partial('./_partial/header.ejs')%>
+    <main>
+        <%- body %>
+    </main>
+    <%- partial('components/footer') %>
 </body>
 </html>

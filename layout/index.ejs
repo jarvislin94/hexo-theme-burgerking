@@ -1,9 +1,11 @@
-<DOCTYPE html />
-<html lang="en">
-<head>
-    <title>Home</title>
-</head>
-<body>
-<h1>j</h1>
-</body>
-</html>
+<div class="wrapper">
+    <%   
+    if(page) {%>
+      <% page.posts.each(function(article){ %>
+        <%- partial('./_partial/article', {item: article, index: true})%>
+      <% }) %>
+    <% } %>
+</div>
+<div class="pagination">
+  <%- include('./_partial/pagination.ejs'); -%>
+</div>
