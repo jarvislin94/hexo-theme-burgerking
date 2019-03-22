@@ -1,0 +1,144 @@
+
+@import "reset.styl";
+@import "_partial/icon.styl";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "PingFang SC";
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin: auto;
+}
+nav {
+  display: flex;
+  min-height: 80px;
+  padding: 0 45px;
+  color: #000;
+  flex-direction: row;
+  padding-top: 50px;
+}
+
+.logo {
+  flex: 1;
+  margin-right: auto;
+  text-transform: uppercase;
+  img.logo_img {
+    width: 30px;
+    height 30px;
+    margin-right: 5px;
+  }
+}
+.nav-item {
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+.nav-item:last-child {
+  margin-right: 0;
+}
+.nav-item:not(.logo) > a:after {
+  content: " ";
+  height: 2px;
+  width: 0;
+  background: #000;
+  display: block;
+  transition: all .3s;
+  margin: auto;
+}
+.nav-item > a:hover:after{
+  width: 100%;
+}
+.wrapper {
+  flex: 1;
+  padding: 50px 200px;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px 0;
+}
+
+article {
+  margin-top: 50px;  
+}
+
+article .article-title {
+  color: #000;
+  text-align: center;
+}
+
+article .article-top-meta {
+  text-align: center;
+}
+
+article .article-footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.article-footer .pull-left {
+  flex-grow: 1;
+}
+
+.driver {
+  height: 1px;
+  width: 50%;
+  background: #999;
+  margin: 50px auto;
+}
+
+nav.pagination {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  justify-content: center;
+}
+nav.pagination .pagination-item {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 30px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.pagination-prev,.pagination-item:last-child {
+  margin-right: 0;
+}
+
+nav.pagination .active {
+  background: #000;
+  color: #fff;
+  margin: 0 15px;
+}
+
+.pagination-prev,.pagination-next {
+  color: #000;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+
+.pagination-prev  {
+  margin-right: 25px
+}
+
+.pagination-next {
+  margin-left: 25px;
+}
+
+.post {
+  max-width: 770px;
+  margin: auto;
+}

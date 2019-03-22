@@ -1,0 +1,27 @@
+<nav class="pagination">
+<a href="<%- config.root %><%- page.prev_link %>" class="pagination-prev">
+ <strong>prev</strong>
+</a>
+<%
+  const total = site.posts.length;
+  let can = total / (config.index_generator.per_page || 4);
+  can = Math.ceil(can);
+%>
+<% for(let i=1; i <= can; i++) {%>
+<%
+if(i === 1) {
+%>
+  <a href="<%- config.root;%>" class="pagination-item <%=page.current === i ? 'active' : null %>">
+  <%= i; %>
+  </a>
+
+<%} else {%>
+  <a href="<%- config.root;%>page/<%- i %>/" class="pagination-item <%=page.current === i ? 'active' : null %>">
+  <%= i; %>
+  </a>
+  <% } %>
+<%}%>
+<a href="<%- config.root %><%page.next_link %>" class="pagination-next">
+   <strong>next</strong>
+</a>
+</nav>
