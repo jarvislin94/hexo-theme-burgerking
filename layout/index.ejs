@@ -1,11 +1,12 @@
 <div class="wrapper">
-    <%   
-    if(page) {%>
-      <% page.posts.each(function(article){ %>
-        <%- partial('./_partial/article', {item: article, index: true})%>
+    <% if(page) { %>
+      <% page.posts.each(function(article){%>
+        <%- partial('./_partial/article', {item: article, index: true}) %>
+        <div class="driver"> </div>
       <% }) %>
     <% } %>
+    <%console.log(site.posts.length);%>
 </div>
-<div class="pagination">
-  <%- include('./_partial/pagination.ejs'); -%>
-</div>
+<%- include('./_partial/pagination.ejs'); -%>
+<% console.log(page); %>
+<% console.log(config); %>

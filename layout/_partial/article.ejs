@@ -1,5 +1,6 @@
 <article>
   <%if(item.link){%>
+  
     <%if(item.title){%>
      <h3 class="article-title"><%=item.title %></h3>
     <%} else { %>
@@ -43,6 +44,37 @@
         <%- item.content %>
       <% } %>
     </div>
-
   </div>
+  <div class="article-footer"> 
+    <div class="pull-left">
+      <% if (item.categories && item.categories.length){ %>
+      <%
+        const cats = [];
+        item.categories.map((item) => {
+          cats.push('<a href="'+ config.root + item.path + '">' + item.name + '</a>');
+        });
+      %>
+      <span class="post-categories">
+        <i class="icon-categories"></i>
+        <%- cats.join(', '); %>
+      </span>
+      <% } %>
+
+  <% if (item.tags && item.tags.length){ %>
+      <%
+        const tags = [];
+        item.tags.map((item) => {
+          tags.push('<a href="'+ config.root + item.path + '">' + item.name + '</a>');
+        });
+      %>
+      <span class="post-tag">
+        <i class="icon-tags"></i>
+        <%- tags.join(', '); %>
+      </span>
+      <% } %>
+    </div>
+    <div class="pull-right">
+      <i class="icon-comments"> </i>
+    </div>
+  </div> 
 </article>
