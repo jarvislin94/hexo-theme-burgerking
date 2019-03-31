@@ -18,12 +18,15 @@ theme: burgerking
 - 主题基本功能可用，包括主页、文章归档、about、文档详情页
 - 主题分页器
 ## TODO
+- [x] V1.0博客基础页面设计和动态化
+- [x] Archiver文章归档时间轴
 - [ ] Category页面
 - [ ] Tag页面
 - [ ] Analytics接入（Google or Baidu）
 - [ ] Comment功能
 - [ ] 支持文章热度显示
 - [ ] 移动端适配
+- [ ] Music box
 
 
 
