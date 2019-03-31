@@ -1,6 +1,5 @@
 <article>
   <%if(item.link){%>
-  
     <%if(item.title){%>
      <h3 class="article-title"><%=item.title %></h3>
     <%} else { %>
@@ -51,7 +50,8 @@
       <%
         const cats = [];
         item.categories.map((item) => {
-          cats.push('<a href="'+ config.root + item.path + '">' + item.name + '</a>');
+          //cats.push('<a href="'+ config.root + item.path + '">' + item.name + '</a>');
+          cats.push('<a href="javascript:void(0)">' + item.name + '</a>');
         });
       %>
       <span class="post-categories">
@@ -64,7 +64,8 @@
       <%
         const tags = [];
         item.tags.map((item) => {
-          tags.push('<a href="'+ config.root + item.path + '">' + item.name + '</a>');
+        //  tags.push('<a href="'+ config.root + item.path + '">' + item.name + '</a>');
+        tags.push('<a href="javascript:void(0);">' + item.name + '</a>');
         });
       %>
       <span class="post-tag">

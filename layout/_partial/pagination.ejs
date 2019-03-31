@@ -1,3 +1,4 @@
+<% if(site.posts.length > config.index_generator.per_page) {%>
 <nav class="pagination">
 <a href="<%- config.root %><%- page.prev_link %>" class="pagination-prev">
  <strong>prev</strong>
@@ -21,7 +22,8 @@ if(i === 1) {
   </a>
   <% } %>
 <%}%>
-<a href="<%- config.root %><%page.next_link %>" class="pagination-next">
+<a href="<%- config.root %><%- page.next_link; %>" class="pagination-next">
    <strong>next</strong>
 </a>
 </nav>
+<% } %>

@@ -1,6 +1,7 @@
 # Theme 
-title: Burgerking
+title: 君の名は。
 #Navigation
 Menu:
   Home: /
-  Archiver:
+  Archiver: /archives
+  About: /about
