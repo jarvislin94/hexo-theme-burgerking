@@ -1,7 +1,6 @@
 <nav>
     <div class="nav-item logo">
-    <img src="<%-config.root %>imgs/logo.png" class="logo_img"/>
-    <a href="<%-config.root;%>"><%= theme.title %></a>
+      <a href="<%-config.root;%>"><%= theme.title %></a>
     </div>
     <% for(let nav in theme.Menu){ %>
      <div class="nav-item"><a href="<%- url_for(theme.Menu[nav]) %>"><%= nav; %></a></div>

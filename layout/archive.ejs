@@ -1,14 +1,21 @@
-<h2 class="timeline-title">
-   Timeline
+<div class="wrapper">
+<h2 class="timeline-title" title="timeline">
+   時間线
 </h2>
-<% let currentYear = null; site.posts.each((item, index) => {
-  console.log(item);
+<div class="timeline-box">
+<% 
+  let currentYear = null; 
+  site.posts.reverse().each((item, index) => {
   if(currentYear !== item.date.year()) {
-      currentYear = item.date.year(); %>
-      <div class="line-item">
+      currentYear = item.date.year(); 
+%>
+<div class="line-item">
 <div class="timeline">
   <div class="line-date"></div>
-  <div class="line-dot current-dot"></div>
+  <div class="line-dot current-dot">
+  <div class="line-dot-sm current-dot-sm">
+  </div>
+  </div>
   <div class="line-title current-year"><%- currentYear; %></div>
 </div>
 <div class="line-h"></div>
@@ -18,10 +25,11 @@
 <div class="line-item">
 <div class="timeline">
   <div class="line-date">
-    <%- item.date.format('MM.DD'); %>
+    <span><%- item.date.format('MM.DD'); %></span>
   </div>
   <div class="line-dot">
-    
+    <div class="line-dot-sm">
+    </div>
   </div>
   <div class="line-title">
    <a href="<%- config.root %><%-item.path; %>"> <%- item.title; %> </a>
@@ -35,4 +43,6 @@
 })
 %>
 
-  
+</div>
+
+  </div>

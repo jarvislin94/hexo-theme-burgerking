@@ -1,11 +1,37 @@
 <div class="footer">
 <div class="copy">
-&copy;<% const now = new Date(); %> <%= now.getFullYear(); %> Burgerking |
-Theme created by <a href="https://github.com/JackZong" target="_blank">@J.zong</a> 
+&copy;<% const now = new Date(); %> <%= now.getFullYear(); %> 君の名は。|
+によって作成されたテーマ<a href="https://github.com/JackZong" target="_blank" title="Theme created by @J.zong">@J.zong</a> 
 </div>
-  <div class="hexo">
-    Powerd by <a href="http://hexo.io/" target="_blank">Hexo</a>
+<br>
+  <div class="hexo" title="Powered by Hexo">
+   搭載 <a href="http://hexo.io/" target="_blank">Hexo</a> | <a href="javascript:void(0);" id="bgToggle"> 背景画像 </a>
   </div>       
 </div>
+
+<script> 
+window.onload = function() {
+  const withBg = localStorage.getItem('withBg');
+  if(withBg === 'true') {
+    document.body.classList.add('with-bg');
+    document.getElementById('bgToggle').classList.add('active');
+  }
+  
+  document.getElementById('bgToggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    const withBg = localStorage.getItem('withBg');
+    if(withBg === 'true') {
+        localStorage.setItem('withBg', 'false');
+        document.body.classList.remove('with-bg');
+         document.getElementById('bgToggle').classList.remove('active');
+      } else {
+        localStorage.setItem('withBg', 'true');
+        document.body.classList.add('with-bg');
+        document.getElementById('bgToggle').classList.add('active');
+      }
+  })
+}
+
+</script>
 </body>
 </html>

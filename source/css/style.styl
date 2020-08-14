@@ -1,237 +1,353 @@
 
-@import "reset.styl";
-@import "_partial/icon.styl";
+@import 'reset.styl'
+@import '_partial/icon.styl'
 
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: "PingFang SC";
-}
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  max-width: 1080px;
-  margin: auto;
-  filter: contrast(200%);
-}
-nav {
-  display: flex;
-  min-height: 80px;
-  padding: 0 45px;
-  color: #000;
-  flex-direction: row;
-  padding: 30px 180px 0;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-main {
-  flex: 1;
-}
-main::before {
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: " ";
-    max-width: 1080px;
-    position: absolute;
-    z-index: -1;
-    opacity: .1;
-    background-image: url("../imgs/bg_yourname.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0 100px;  
-  }
-.logo {
-  flex: 1;
-  margin-right: auto;
-  img.logo_img {
-    width: 40px;
-    height 40px;
-    margin-right: 15px;
-  }
-  a {
-    text-transform: uppercase;
-  }
-}
-.nav-item {
-  margin-right: 40px;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 700;
-  filter: grayscale(200%) drop-shadow(8px 8px 10px #999);
-}
-.nav-item:last-child {
-  margin-right: 0;
-}
-.nav-item:not(.logo) > a:after {
-  content: " ";
-  height: 2px;
-  width: 0;
-  background: #000;
-  display: block;
-  transition: all .3s;
-  margin: auto;
-}
-.nav-item > a:hover:after{
-  width: 100%;
-}
-.wrapper {
-  flex: 1;
-  padding: 50px 180px;
-}
+.overflow-ellipsis
+  white-space nowrap
+  text-overflow ellipsis
+  overflow hidden
 
-.footer {
-  text-align: center;
-  padding: 25px 0;
-  color: #999;
-  a {
-    color: #000;
-  }
-}
+hover-color = #ffc166
+
+html, body
+  height 100%
+  width 100%
+  padding 0
+  margin 0
+  font-family 'YakuHanJPs', '游ゴシック', 'YuGothic', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic Pro', 'ＭＳ ゴシック', sans-serif
+
+body
+  min-height 100%
+  display flex
+  flex-direction column
+  max-width 1080px
+  margin auto
+
+body.with-bg
+  background-image url('../imgs/main_vsl01_pressed.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-attachment fixed
+  background-position 0px -110px
+
+nav
+  display flex
+  min-height 80px
+  padding 0 45px
+  color #000
+  flex-direction row
+  padding 30px 180px 0
+
+a
+  text-decoration none
+  color inherit
+
+main
+  flex 1
+
+main::before
+  display block
+  width 100%
+  height 100%
+  content ' '
+  max-width 1080px
+  position absolute
+  z-index -1
+  // background-image: url("../imgs/main_vsl01.jpg");
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: 0 100px;
+
+.logo
+  flex 1
+  margin-right auto
+  margin-left -6px
+
+  img.logo_img
+    width 40px
+    height 40px
+    margin-right 15px
+
+  a
+    text-transform uppercase
+
+.nav-item
+  margin-right 40px
+  display flex
+  align-items center
+  font-size 18px
+  font-weight 700
+
+.nav-item:last-child
+  margin-right 0
+
+.nav-item:not(.logo) > a:after
+  content ' '
+  height 2px
+  width 0
+  background #000
+  display block
+  transition all 0.3s
+  margin auto
+
+.nav-item > a:hover:after
+  width 100%
+
+.wrapper
+  flex 1
+  padding 50px 150px
+
+.footer
+  text-align center
+  padding 25px 0
+  color #999
+
+  a
+    color #000
+
+  a.active
+    color hover-color
+
 // Article
-article {
-  margin-top: 50px;  
-}
+article
+  margin-top 50px
 
-article .article-title {
-  color: #000;
-  text-align: center;
-}
+.article-title
+  color #000
+  font-size 30px
+  font-weight 700
+  transition opacity 1s ease-out
+  margin-top 15px
+  margin-bottom 20px
 
-article .article-top-meta {
-  text-align: center;
-}
+article .article-title-detail
+  @extend .article-title
+  text-align center
 
-article .article-footer {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-}
+article .article-title:hover
+  opacity 0.8
 
-.article-footer .pull-left {
-  flex-grow: 1;
-}
+article .article-top-meta .post-tag
+  display inline-block
+  margin-right 3%
+  border 0.15em #094C9E solid
+  border-radius 0.3em
+  font-weight bold
+  font-size 1em
+  color #094C9E
+  padding 5px 5px
 
-.post-categories, .post-tag {
-  i {
-    vertical-align: middle;
-  }
-  a {
-    cursor: inherit;
-  }
-}
+article .article-content
+  margin-top 35px
 
-.driver {
-  height: 2px;
-  width: 50%;
-  background: #f7f7f7;
-  margin: 50px auto;
-}
+article .article-footer
+  display flex
+  flex-direction row
+  margin-top 20px
 
-nav.pagination {
-  display: flex;
-  margin: auto;
-  flex-direction: row;
-  justify-content: center;
-  filter: grayscale(200%) drop-shadow(8px 8px 10px #999);
-}
-nav.pagination .pagination-item {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 30px;
-  margin-right: 15px;
-  border-radius: 50%;
-}
+.article-footer .pull-left
+  flex-grow 1
 
-.pagination-prev,.pagination-item:last-child {
-  margin-right: 0;
-}
+.read-more
+  margin-top 8px
 
-nav.pagination .active {
-  background: #000;
-  color: #fff;
-  margin: 0 15px;
-}
+article .read-more a
+  text-decoration underline
 
-.pagination-prev,.pagination-next {
-  color: #000;
-  font-size: 18px;
-  text-transform: uppercase;
-  line-height: 30px;
-}
+article .read-more a:hover
+  color #ffc166
 
-.pagination-prev  {
-  margin-right: 25px
-}
+.posted-on
+  font-weight 700
+  margin-left -6px
 
-.pagination-next {
-  margin-left: 25px;
-}
+.posted-on-detail
+  @extend .posted-on
+  text-align center
 
-.post {
-  max-width: 770px;
-  margin: auto;
-}
-// timeline
-.timeline-title {
-  text-align: center;
-  color: #999;
-}
+.driver
+  height 2px
+  width 50%
+  background #f7f7f7
+  margin 50px auto
 
-.line-item {
-  padding-left: 440px;
-}
+nav.pagination
+  display flex
+  margin auto
+  flex-direction row
+  justify-content center
 
-.timeline {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.line-date {
-  font-size: 17px;
-  font-weight: 500;
-  width: 70px;
-}
-.line-dot {
-  width: 20px;
-  height: 20px;
-  background: #999;
-  border-radius: 50%;
-}
-.line-title {
-  margin-left: 40px;
-}
-.line-h {
-  height: 50px;
-  width: 2px;
-  background: #000;
-  position: relative;
-  transform: translate3d(79px, 0, 0);
-}
-.current-year {
-  font-size: 25px;
-  font-weight: 700;
-}
-.current-dot {
-  background: #000;
-}
+nav.pagination .pagination-item
+  width 30px
+  height 30px
+  text-align center
+  font-size 18px
+  line-height 30px
+  margin-right 15px
+  border-radius 50%
 
-//About
-.about-title {
-  text-align: center;
-  color:#999;
-}
-.intro {
-  text-align: center;
-  color: #000;
-  font-size: 20px;
-  filter: grayscale(200%);
-}
+.pagination-prev, .pagination-item:last-child
+  margin-right 0
+
+nav.pagination .active
+  background #000
+  color #fff
+  margin 0 15px
+
+.pagination-prev, .pagination-next
+  color #000
+  font-size 18px
+  text-transform uppercase
+  line-height 30px
+
+.pagination-prev
+  margin-right 25px
+
+.pagination-next
+  margin-left 25px
+
+.post
+  max-width 770px
+  margin auto
+
+// Timeline page(archive)
+.timeline-title
+  text-align center
+  color #999
+
+.timeline-box
+  padding-left calc(50% - 79px)
+
+.timeline
+  display flex
+  flex-direction row
+
+.line-date
+  font-weight 500
+  min-width 70px
+  flex-basis 70px
+
+.line-dot
+  width 18px
+  min-width 18px
+  height 18px
+  background #000
+  border-radius 50%
+  flex-basis 18px
+  position relative
+
+.line-dot-sm
+  width 13px
+  height 13px
+  background-color #fff
+  position absolute
+  top 50%
+  left 50%
+  transform translate3d(-50%, -50%, 0)
+  border-radius 50%
+
+.line-title
+  padding-left 40px
+  transition color 0.24s ease
+  font-size 16px
+  @extend .overflow-ellipsis
+
+.line-title:hover
+  color #ffc166
+
+.line-h
+  height 50px
+  width 100%
+  border-left 4px solid #000
+  position relative
+  transform translate3d(77px, 0, 0)
+
+.current-year
+  font-size 25px
+  font-weight 700
+
+.current-dot
+  background #000
+  width 32px
+  height 32px
+  flex-basis 32px
+  min-width 32px
+  margin-left -7px
+
+.current-dot-sm
+  width 24px
+  height 24px
+
+// About
+.about-title
+  text-align center
+  color #999
+
+.intro
+  text-align center
+  color #000
+  font-size 20px
+
+// musicbar
+@keyframes rotate360
+  from
+    transform rotate(0deg)
+
+  to
+    transform rotate(360deg)
+
+.paused .left
+  width 50% !important
+
+.paused .right
+  width 50% !important
+
+.paused .trangle-1
+  transform translate(0, -50%) !important
+
+.paused .trangle-2
+  transform translate(0, 50%) !important
+
+// Tag page
+.article-tag-list
+  list-style-type none
+  display flex
+  flex-direction row
+
+.article-tag-list li
+  color blue
+
+.tag-box
+  // border: 3px solid #414141
+  min-height 550px
+  padding 20px 40px
+
+.tag-title
+  text-align center
+  color #999
+
+.tag-list li
+  font-size 18px
+  font-weight 600
+  transition color 0.24s ease
+  border-bottom 1px dashed #414141
+  margin-bottom 20px
+  padding-bottom 5px
+
+.tag-list li:hover
+  color #ffc166
+
+.tag-list li a
+  display flex
+  flex-direction row
+
+.tag-post-title
+  flex 1
+  margin-right 30px
+  @extend .overflow-ellipsis
+
+.card
+  background #fff
+  border-radius 6px
+  box-shadow 0 4px 6px rgba(0, 0, 0, 0.08)
+  padding 20px 30px

@@ -1,1 +1,20 @@
-<h2>Tags</h2>
+<div class="wrapper">
+<h2 class="tag-title">#<%= page.tag %>#に関する記事</h2>
+<div class="tag-box">
+
+<% if (page.posts && page.posts){ %>
+<ul class="tag-list">
+ <% page.posts.forEach((item) => { %>
+  <% const href = config.root + item.path; %>
+  <li>
+    <a href="<%= href %>" title="<%= item.title %>">
+     <span class="tag-post-title"># <%= item.title %> </span>
+     <span class="tag-post-time"><%= item.date.format(config.date_format) %></span>   
+     </a>
+  </li>
+<% }) %>
+</ul>
+<% } %>
+</div>
+
+</div>
