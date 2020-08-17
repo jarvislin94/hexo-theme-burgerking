@@ -18,9 +18,24 @@
 theme: burgerking
 ```
 
+## 个性化配置
+
+theme/\_config.yml
+
+```yml
+## highlight 主题选择
+highlight:
+  theme: vs2015
+```
+
 这样就安装好了，尽情享受吧！
 
 ## 更新
+
+### v1.2
+
+- 添加 code highlight 配置
+- hexo theme unit test check([checklist](https://github.com/hexojs/hexo-theme-unit-test))
 
 ### v1.1
 

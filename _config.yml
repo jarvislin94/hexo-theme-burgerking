@@ -5,3 +5,11 @@ Menu:
   ホームページ: /
   アーカイブ: /archives
   オン: /about
+#Post date format
+date_format: YY年MM月DD日
+#Read more
+read_more: 続きを読む
+#Plugins setting
+highlight:
+  enable: true
+  theme: atom-one-dark #reference: source => plugins => highlight => styles=> style name

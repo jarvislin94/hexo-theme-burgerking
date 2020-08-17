@@ -1,9 +1,8 @@
 <div class="wrapper">
     <% if(page) { %>
       <% page.posts.each(function(article, index){%>
-        <%- partial('./_partial/article', {item: article, index: true}) %>
+        <%- partial('./_partial/article', { item: article, index: true }) %>
        <% if(index !== page.posts.length - 1) { %>
-       <div class="driver"> </div>
       <% } %>
       <% }) %>
     <% } %>
