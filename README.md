@@ -5,7 +5,7 @@
 
 ## Demo
 
-参考我的博客：[君の名は。](https://jackzong.github.io)
+参考我的博客：[君の名は。](https://jackzong.github.io) （如果有感兴趣的设计师一起把UI设计得好看些：）
 ![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/demov1_1.jpg)
 
 ## 安装
