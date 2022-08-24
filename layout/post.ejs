@@ -1,4 +1,6 @@
-
 <div class="post">
-<%- partial('./_partial/article.ejs', {item: page, index: false}) %>
+    <%- partial('./_partial/article.ejs', {item: page, index: false}) %>
+        <% if (config.Gitalk.enable) { %>
+            <div id="gitalk-container" class="card"></div>
+            <% } %>
 </div>

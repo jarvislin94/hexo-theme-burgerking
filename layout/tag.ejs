@@ -1,20 +1,40 @@
 <div class="wrapper">
-<h2 class="tag-title">#<%= page.tag %>#に関する記事</h2>
-<div class="tag-box">
-
-<% if (page.posts && page.posts){ %>
-<ul class="tag-list">
- <% page.posts.forEach((item) => { %>
-  <% const href = config.root + item.path; %>
-  <li>
-    <a href="<%= href %>" title="<%= item.title %>">
-     <span class="tag-post-title"># <%= item.title %> </span>
-     <span class="tag-post-time"><%= item.date.format(theme.date_format) %></span>   
-     </a>
-  </li>
-<% }) %>
-</ul>
-<% } %>
-</div>
+  <h2 class="tag-title">
+    <%if(page.tag) {%>
+      #<%=page.tag%>
+        <% } else {%> 标签<%}%>
+  </h2>
+  <div class="tag-box">
+    <% if (site.tags.length && !page.tag){ %>
+      <ul class="tag-list">
+        <% site.tags.forEach((item)=> { %>
+          <% const href=config.root + item.path; %>
+            <li>
+              <a href="<%= href %>" title="<%= item.title %>">
+                <span class="tag-post-title"># <%= item.name %> </span>
+                <span class="tag-post-time">
+                  <%= item.posts.length %>篇
+                </span>
+              </a>
+            </li>
+            <% }) %>
+      </ul>
+      <% } %>
+        <% if (page.tag){ %>
+          <ul class="tag-list">
+            <% page.posts.forEach((post)=> { %>
+              <% const href=config.root + post.path; %>
+                <li>
+                  <a href="<%= href %>" title="<%= post.title %>">
+                    <span class="tag-post-title"># <%= post.title %> </span>
+                    <span class="tag-post-time">
+                      <%= post.date.format(theme.date_format) %>
+                    </span>
+                  </a>
+                </li>
+                <% }) %>
+          </ul>
+          <% } %>
+  </div>
 
 </div>

@@ -2,13 +2,15 @@
 title: 『君の名は。』
 #Navigation
 Menu:
-  ホームページ: /
-  アーカイブ: /archives
-  オン: /about
+  主页: /
+  时间轴: /archives
+  标签: /tags
+  关于: /about
+
 #Post date format
 date_format: YY年MM月DD日
 #Read more
-read_more: 続きを読む
+read_more:  阅读更多
 #Plugins setting
 highlight:
   enable: true

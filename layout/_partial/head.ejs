@@ -1,18 +1,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= theme.title %></title>
+  <title>
+    <%= theme.title %>
+  </title>
   <link rel="icon" href="<%-url_for('/imgs/favicon.ico')%>">
   <link rel="stylesheet" href="<%- url_for('/css/style.css')%>" type="text/css">
   <link rel="stylesheet" href="<%- '/plugins/highlight/styles/' + theme.highlight.theme + '.css' %>">
-  <!--  <script type="text/javascript" src="<%- config.root%>js/musicbar.js"></script>
-      <script>
-    window.onload = function() {
-      const mb = new MusicBar({ 
-        url:'/music/daydaymissyou.mp3',
-        thumb: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000007oL0R1hDyxV.jpg?max_age=2592000"
-      });
-      mb.createVideo();
-    }
-  </script> -->
+  <!-- Gitalk -->
+  <% if (config.Gitalk.enable) { %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const gitalkContainer = document.getElementById('gitalk-container');
+        if (!gitalkContainer) return;
+        const gitalk = new Gitalk({
+          clientID: '<%= config.Gitalk.clientID %>',
+          clientSecret: '<%= config.Gitalk.clientSecret %>',
+          repo: '<%= config.Gitalk.repo %>',      // The repository of store comments %>'
+          owner: '<%= config.Gitalk.owner %>',
+          admin: ['<%= config.Gitalk.admin %>'],
+          id: location.pathname,      // Ensure uniqueness and length less than 50
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+        gitalk.render('gitalk-container');
+      })
+    </script>
+    <% } %>
 </head>

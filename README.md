@@ -28,9 +28,26 @@ highlight:
   theme: vs2015
 ```
 
+## 配置Gitalk
+
+root/\_config.yml
+
+```yml
+// Gitalk settings, check at: https://github.com/gitalk/gitalk#usage
+Gitalk:
+  enable: true
+  clientID: ''
+  clientSecret: ''
+  repo: ''
+  owner: ''
+  admin: ['xx']
+```
 这样就安装好了，尽情享受吧！
 
 ## 更新
+
+### v1.3
+- 添加Gitalk
 
 ### v1.2
 
@@ -54,6 +71,6 @@ highlight:
 - [x] Tag 页面
 - [ ] Category 页面
 - [ ] Analytics tool
-- [ ] Disqus
+- [x] Gitalk
 - [ ] Music bar
 - [ ] 移动端适配
