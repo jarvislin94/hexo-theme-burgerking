@@ -22,6 +22,7 @@ body
   flex-direction column
   max-width 1080px
   margin auto
+  background: #f5f7f9
 
 body.with-bg
   background-image url('../imgs/main_vsl01_pressed.jpg')
@@ -53,23 +54,71 @@ main::before
   max-width 1080px
   position absolute
   z-index -1
-  // background-image: url("../imgs/main_vsl01.jpg");
-  // background-repeat: no-repeat;
-  // background-size: contain;
-  // background-position: 0 100px;
 
 .logo
-  flex 1
-  margin-right auto
-  margin-left -6px
+  flex: 1
 
-  img.logo_img
-    width 40px
-    height 40px
-    margin-right 15px
+.logo .btn
+  position: relative
+  display: inline-block
+  width: auto 
+  height: auto
+  background-color: transparent
+  border: none
+  cursor: pointer
+  min-width: 150px
+  padding: 5px
+  span
+    position: relative
+    display: inline-block
+    font-size: 14px
+    font-weight: bold
+    letter-spacing: 2px
+    text-transform: uppercase
+    top: 0 
+    left: 0
+    padding: 15px 20px
+    transition: 0.3s
+    width: 100%
+    color: rgb(255, 255, 255)
+    background-color: rgb(54, 56, 55)
+    box-sizing: border-box
+  &::before
+  &::after
+    background: transparent
+    z-index: 2
+    position: absolute
+    content: ""
 
-  a
-    text-transform uppercase
+
+.btn.btn-hover
+  &::after
+  &::before
+    width: 10%
+    height: 25%
+    transition: 0.35s
+
+.btn.btn-hover
+  &::before 
+    bottom: 0 
+    left: 0
+    border-left: 1px solid rgb(28, 31, 30)
+    border-bottom: 1px solid rgb(28, 31, 30)
+
+.btn.btn-hover
+  &::after 
+    top: 0 
+    right: 0
+    border-right: 1px solid rgb(28, 31, 30)
+    border-top: 1px solid rgb(28, 31, 30)
+
+.btn.btn-hover
+  &:hover
+    &::before
+    &::after
+      width: 99%
+      height: 99%
+
 
 .nav-item
   margin-right 40px
@@ -111,9 +160,13 @@ main::before
 // Article
 article
   margin-top 50px
-
   img
     max-width 100%
+article.post-article img
+    transition: 0.3s ease
+    filter: grayscale(95%)
+    &:hover
+      filter: grayscale(0)
 
 .article-title
   color #000
@@ -368,3 +421,17 @@ blockquote
 blockquote cite::before 
   content: "-";
   padding: 0 5px;
+
+
+table th 
+  border-top: 1px solid #414141
+  border-left: 1px solid #414141
+table
+  border-spacing: 0px
+  border-right: 1px solid #414141
+  border-bottom: 1px solid #414141
+td 
+  border-top: 1px solid #414141
+  border-left: 1px solid #414141
+
+

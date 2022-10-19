@@ -1,61 +1,72 @@
-<article class="card">
+<article class="card <% if (!index) { %>post-article<% } %>">
   <%if(item.link){%>
     <%# link type post handing %>
-    <%if (item.title) {%>
-      <h3 class="article-title"><%=item.title %></h3>
-    <%} else { %>
-      <h3 class="article-title">
-        <a href="<%-item.link%>">
-          <span><%= item.link %></span>
-        </a>
-      </h3>
-    <% } %>
-    <%} else { %>
-    <%if(index) {%>
-      <div class="posted-on">『<%= item.date.format(theme.date_format)%>』</div>
-      <h3 class="article-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h3>
-    <% } else { %>
-      <h3 class="article-title-detail"><span><%= item.title %></span></h3>
-       <div class="posted-on-detail">『<%= item.date.format(theme.date_format)%>』</div>
-    <% } %>
-  <% } %>
-  <div class="article-top-meta">
-      <% if (item.tags && item.tags.length && index){ %>
-      <%
-        const tags = [];
-        item.tags.map((item) => {
-          tags.push('<a href="'+ config.root + item.path + '" class="post-tag">' + item.name + '</a>');
-       // tags.push('<a href="javascript:void(0);">' + item.name + '</a>');
-        });
-      %>
-        <%- tags.join(''); %>
-      <% } %>
-  </div>
-   <% if (item.photos && item.photos.length){ %>
-  <div class="featured-media">
-    <% if (item.photos.length && !index){ %>
-    <% for (var i in item.photos) { %>
-    <img src="<%- url_for(item.photos[i]) %>" class="attachment-post-thumbnail size-post-thumbnail">
-    <% } %>
-    <% } else if (item.photos.length && index){ %>
-    <img src="<%- url_for(item.photos[0]) %>" class="attachment-post-thumbnail size-post-thumbnail">
-    <% } else { %>
-    <img src="<%- url_for(item.photos) %>" class="attachment-post-thumbnail size-post-thumbnail">
-    <% } %>
-  </div>
-  <% } %>
+      <%if (item.title) {%>
+        <h3 class="article-title">
+          <%=item.title %>
+        </h3>
+        <%} else { %>
+          <h3 class="article-title">
+            <a href="<%-item.link%>">
+              <span>
+                <%= item.link %>
+              </span>
+            </a>
+          </h3>
+          <% } %>
+            <%} else { %>
+              <%if(index) {%>
+                <div class="posted-on">『<%= item.date.format(theme.date_format)%>』</div>
+                <h3 class="article-title"><a href="<%- config.root %><%- item.path %>"><span>
+                      <%= item.title %>
+                    </span></a></h3>
+                <% } else { %>
+                  <h3 class="article-title-detail"><span>
+                      <%= item.title %>
+                    </span></h3>
+                  <div class="posted-on-detail">『<%= item.date.format(theme.date_format)%>』</div>
+                  <% } %>
+                    <% } %>
+                      <div class="article-top-meta">
+                        <% if (item.tags && item.tags.length && index){ %>
+                          <% const tags=[]; item.tags.map((item)=> {
+                            tags.push('<a href="'+ config.root + item.path + '" class="post-tag">' + item.name +
+                              '</a>');
+                            // tags.push('<a href="javascript:void(0);">' + item.name + '</a>');
+                            });
+                            %>
+                            <%- tags.join(''); %>
+                              <% } %>
+                      </div>
+                      <% if (item.photos && item.photos.length){ %>
+                        <div class="featured-media">
+                          <% if (item.photos.length && !index){ %>
+                            <% for (var i in item.photos) { %>
+                              <img src="<%- url_for(item.photos[i]) %>"
+                                class="attachment-post-thumbnail size-post-thumbnail">
+                              <% } %>
+                                <% } else if (item.photos.length && index){ %>
+                                  <img src="<%- url_for(item.photos[0]) %>"
+                                    class="attachment-post-thumbnail size-post-thumbnail">
+                                  <% } else { %>
+                                    <img src="<%- url_for(item.photos) %>"
+                                      class="attachment-post-thumbnail size-post-thumbnail">
+                                    <% } %>
+                        </div>
+                        <% } %>
 
-  <div class="article-content">
-    <div class="entry">
-      <% if (item.excerpt && index){ %>
-        <%- item.excerpt %>
-        <p class="read-more"> <a href="<%- config.root %><%- item.path %>" title="read more" ><%- theme.read_more %><a></p>
-      <% } else { %>
-        <%- item.content %>
-      <% } %>
-    </div>
-  </div>
-  <div class="article-footer"> 
- 
-  </div> 
+                          <div class="article-content">
+                            <div class="entry">
+                              <% if (item.excerpt && index){ %>
+                                <%- item.excerpt %>
+                                  <p class="read-more"> <a href="<%- config.root %><%- item.path %>" title="read more">
+                                      <%- theme.read_more %><a></p>
+                                  <% } else { %>
+                                    <%- item.content %>
+                                      <% } %>
+                            </div>
+                          </div>
+                          <div class="article-footer">
+
+                          </div>
 </article>

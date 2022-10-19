@@ -1,48 +1,50 @@
 <div class="wrapper">
-<h2 class="timeline-title" title="timeline">
-   時間线
-</h2>
-<div class="timeline-box">
-<% 
-  let currentYear = null; 
-  site.posts.reverse().each((item, index) => {
-  if(currentYear !== item.date.year()) {
-      currentYear = item.date.year(); 
-%>
-<div class="line-item">
-<div class="timeline">
-  <div class="line-date"></div>
-  <div class="line-dot current-dot">
-  <div class="line-dot-sm current-dot-sm">
-  </div>
-  </div>
-  <div class="line-title current-year"><%- currentYear; %></div>
-</div>
-<div class="line-h"></div>
-</div>
- <% } %>
+  <h2 class="timeline-title" title="timeline">
+    時間线
+  </h2>
+  <div class="timeline-box">
+    <% let currentYear=null; site.posts.sort('date',-1).forEach((item, index)=> {
+      if(currentYear !== item.date.year()) {
+      currentYear = item.date.year();
+      %>
+      <div class="line-item">
+        <div class="timeline">
+          <div class="line-date"></div>
+          <div class="line-dot current-dot">
+            <div class="line-dot-sm current-dot-sm">
+            </div>
+          </div>
+          <div class="line-title current-year">
+            <%- currentYear; %>
+          </div>
+        </div>
+        <div class="line-h"></div>
+      </div>
+      <% } %>
 
-<div class="line-item">
-<div class="timeline">
-  <div class="line-date">
-    <span><%- item.date.format('MM.DD'); %></span>
+        <div class="line-item">
+          <div class="timeline">
+            <div class="line-date">
+              <span>
+                <%- item.date.format('MM.DD'); %>
+              </span>
+            </div>
+            <div class="line-dot">
+              <div class="line-dot-sm">
+              </div>
+            </div>
+            <div class="line-title">
+              <a href="<%- config.root %><%-item.path; %>">
+                <%- item.title; %>
+              </a>
+            </div>
+          </div>
+          <% if(index !==site.posts.length -1) {%>
+            <div class="line-h"></div>
+            <% } %>
+        </div>
+        <% }) %>
+
   </div>
-  <div class="line-dot">
-    <div class="line-dot-sm">
-    </div>
-  </div>
-  <div class="line-title">
-   <a href="<%- config.root %><%-item.path; %>"> <%- item.title; %> </a>
-  </div>
-</div>
-<% if(index !== site.posts.length -1) {%>
-<div class="line-h"></div>
-<% } %>
-</div>
-<%
-})
-%>
 
 </div>
-
-  </div>

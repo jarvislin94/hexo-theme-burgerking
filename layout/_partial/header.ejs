@@ -1,8 +1,17 @@
 <nav>
-    <div class="nav-item logo">
-      <a href="<%-config.root;%>"><%= theme.title %></a>
-    </div>
-    <% for(let nav in theme.Menu){ %>
-     <div class="nav-item"><a href="<%- url_for(theme.Menu[nav]) %>"><%= nav; %></a></div>
+  <div class="nav-item logo">
+    <a href="<%-config.root;%>">
+      <button class="btn btn-hover">
+        <span>
+          <%= theme.title %>
+        </span>
+      </button>
+    </a>
+  </div>
+
+  <% for(let nav in theme.Menu){ %>
+    <div class="nav-item"><a href="<%- url_for(theme.Menu[nav]) %>">
+        <%= nav; %>
+      </a></div>
     <% } %>
 </nav>
