@@ -1,7 +1,12 @@
 ## 君の名は。
 
-君の名は。是一款基于电影《你的名字》客制化的 hexo 主题，基于 hexo，使用了 ejs，stylus，normalize.css，主题简洁明了，仅此表达对电影你的名字的喜爱。  
+君の名は。是一款基于电影《你的名字》客制化的 hexo 主题，基于 hexo，使用了 ejs，stylus，normalize.css，主题简洁明了，仅此表达对电影你的名字的喜爱。
+
+<p align="center">
+
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/) [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-2.0)
+
+</p>
 
 ## Live Demo
 
@@ -9,13 +14,11 @@
 ➡️ <a href="https://jackzong.github.io">Demo</a>
 </p>
 
-PC:
-![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/pc.png)
+## Screenshot
 
-移动端：
-![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/mobile.png)
+![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/Burgerking.png)
 
-## 安装
+## Install
 
 1. 下载主题文件，直接`git clone`本仓库或者下载.zip 包
 2. 在`themes`主题文件夹下创建新目录`burgerking`,然后将本主题文件全部拷贝过去
@@ -33,6 +36,9 @@ theme/\_config.yml
 ## highlight 主题选择
 highlight:
   theme: vs2015
+## pv pu
+busuanzi:
+  enable: true
 ```
 
 ## 配置 Gitalk
@@ -52,15 +58,20 @@ Gitalk:
 
 这样就安装好了，尽情享受吧！
 
-## 更新
+## Release notes
+
+### v1.4
+
+- Mobile device support
+- PU & PV
 
 ### v1.3
 
-- 添加 Gitalk
+- Add Gitalk
 
 ### v1.2
 
-- 添加 code highlight 配置
+- Add code highlight support
 - hexo theme unit test check([checklist](https://github.com/hexojs/hexo-theme-unit-test))
 
 ### v1.1
