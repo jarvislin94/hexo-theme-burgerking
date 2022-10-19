@@ -1,7 +1,7 @@
 
 @import 'reset.styl'
 @import '_partial/icon.styl'
-
+  
 .overflow-ellipsis
   white-space nowrap
   text-overflow ellipsis
@@ -33,10 +33,11 @@ body.with-bg
 
 nav
   display flex
-  min-height 80px
-  padding 0 45px
-  color #000
   flex-direction row
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-around
+  color #000
   padding 30px 180px 0
 
 a
@@ -56,7 +57,7 @@ main::before
   z-index -1
 
 .logo
-  flex: 1
+  flex: 0.7
 
 .logo .btn
   position: relative
@@ -121,9 +122,6 @@ main::before
 
 
 .nav-item
-  margin-right 40px
-  display flex
-  align-items center
   font-size 18px
   font-weight 700
 
@@ -156,6 +154,9 @@ main::before
 
   a.active
     color hover-color
+
+  .hexo
+    margin-top: 5px
 
 // Article
 article
@@ -375,7 +376,7 @@ nav.pagination .active
 
 .tag-box
   // border: 3px solid #414141
-  min-height 550px
+  min-height 450px
   padding 20px 40px
 
 .tag-title
@@ -435,3 +436,4 @@ td
   border-left: 1px solid #414141
 
 
+@import 'mobile.styl'

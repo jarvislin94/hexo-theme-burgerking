@@ -3,10 +3,17 @@
 君の名は。是一款基于电影《你的名字》客制化的 hexo 主题，基于 hexo，使用了 ejs，stylus，normalize.css，主题简洁明了，仅此表达对电影你的名字的喜爱。  
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/) [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-2.0)
 
-## Demo
+## Live Demo
 
-参考我的博客：[君の名は。](https://jackzong.github.io) （如果有感兴趣的设计师一起把UI设计得好看些：）
-![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/demov1_1.jpg)
+<p align="center">
+➡️ <a href="https://jackzong.github.io">Demo</a>
+</p>
+
+PC:
+![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/pc.png)
+
+移动端：
+![你的名字](https://github.com/JackZong/burger-king-hexo-theme/blob/master/source/imgs/mobile.png)
 
 ## 安装
 
@@ -28,7 +35,7 @@ highlight:
   theme: vs2015
 ```
 
-## 配置Gitalk
+## 配置 Gitalk
 
 root/\_config.yml
 
@@ -36,18 +43,20 @@ root/\_config.yml
 // Gitalk settings, check at: https://github.com/gitalk/gitalk#usage
 Gitalk:
   enable: true
-  clientID: ''
-  clientSecret: ''
-  repo: ''
-  owner: ''
-  admin: ['xx']
+  clientID: ""
+  clientSecret: ""
+  repo: ""
+  owner: ""
+  admin: ["xx"]
 ```
+
 这样就安装好了，尽情享受吧！
 
 ## 更新
 
 ### v1.3
-- 添加Gitalk
+
+- 添加 Gitalk
 
 ### v1.2
 
@@ -69,8 +78,8 @@ Gitalk:
 - [x] V1.0 博客基础页面设计和动态化
 - [x] Archiver 文章归档时间轴
 - [x] Tag 页面
-- [ ] Category 页面
-- [ ] Analytics tool
+- [x] Analytics tool
 - [x] Gitalk
+- [x] 移动端适配
+- [ ] Category 页面
 - [ ] Music bar
-- [ ] 移动端适配
