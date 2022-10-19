@@ -15,3 +15,6 @@ read_more:  阅读更多
 highlight:
   enable: true
   theme: atom-one-dark #reference: source => plugins => highlight => styles=> style name
+# https://busuanzi.ibruce.info/
+busuanzi:
+  enable: true
